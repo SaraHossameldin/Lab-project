@@ -21,7 +21,6 @@ Register::Register(QWidget *parent)
 Register::~Register()
 {
     delete ui;
-    delete database;
 }
 
 void Register::on_pushButton_OK_clicked()
@@ -80,16 +79,14 @@ void Register::on_pushButton_OK_clicked()
 
     // Hide the current window and show the login window
     hide();
-    Login *login = new Login;
-    login->show();
+    ((QDialog*)this->parent())->show();
 }
 
 void Register::on_pushButton_Cancel_clicked()
 {
     // Hide the current window and show the login window to try and login again
     hide();
-    Login *login= new Login;
-    login->show();
+    ((QDialog*)this->parent())->show();
 }
 
 

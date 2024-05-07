@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="pushButtonNewCustomer">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>130</x>
      <y>190</y>
      <width>80</width>
      <height>18</height>
@@ -24,19 +24,6 @@
    </property>
    <property name="text">
     <string>New Customer</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_Quit">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>190</y>
-     <width>80</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Quit Application</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">

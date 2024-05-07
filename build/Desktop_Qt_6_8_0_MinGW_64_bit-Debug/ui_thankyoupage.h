@@ -21,7 +21,6 @@ class Ui_ThankYouPage
 {
 public:
     QPushButton *pushButtonNewCustomer;
-    QPushButton *pushButton_Quit;
     QLabel *label;
 
     void setupUi(QDialog *ThankYouPage)
@@ -31,10 +30,7 @@ public:
         ThankYouPage->resize(400, 300);
         pushButtonNewCustomer = new QPushButton(ThankYouPage);
         pushButtonNewCustomer->setObjectName("pushButtonNewCustomer");
-        pushButtonNewCustomer->setGeometry(QRect(60, 190, 80, 18));
-        pushButton_Quit = new QPushButton(ThankYouPage);
-        pushButton_Quit->setObjectName("pushButton_Quit");
-        pushButton_Quit->setGeometry(QRect(200, 190, 80, 18));
+        pushButtonNewCustomer->setGeometry(QRect(130, 190, 80, 18));
         label = new QLabel(ThankYouPage);
         label->setObjectName("label");
         label->setGeometry(QRect(120, 110, 101, 16));
@@ -48,7 +44,6 @@ public:
     {
         ThankYouPage->setWindowTitle(QCoreApplication::translate("ThankYouPage", "Dialog", nullptr));
         pushButtonNewCustomer->setText(QCoreApplication::translate("ThankYouPage", "New Customer", nullptr));
-        pushButton_Quit->setText(QCoreApplication::translate("ThankYouPage", "Quit Application", nullptr));
         label->setText(QCoreApplication::translate("ThankYouPage", "Thank you for Your order!", nullptr));
     } // retranslateUi
 
