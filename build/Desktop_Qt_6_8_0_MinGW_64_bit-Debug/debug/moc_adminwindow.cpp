@@ -38,9 +38,9 @@ constexpr auto qt_meta_stringdata_CLASSAdminWindowENDCLASS = QtMocHelpers::strin
     "AdminWindow",
     "on_pushButtonAddUser_clicked",
     "",
-    "on_pushButtonAddUser_2_clicked",
+    "on_pushButtonpushButtonApplyChangesProducts_clicked",
     "on_pushButtonAddProduct_clicked",
-    "on_pushButtonAddProduct_2_clicked"
+    "on_pushButtonApplyChanges_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -86,11 +86,11 @@ Q_CONSTINIT const QMetaObject AdminWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<AdminWindow, std::true_type>,
         // method 'on_pushButtonAddUser_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButtonAddUser_2_clicked'
+        // method 'on_pushButtonpushButtonApplyChangesProducts_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButtonAddProduct_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButtonAddProduct_2_clicked'
+        // method 'on_pushButtonApplyChanges_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -103,9 +103,9 @@ void AdminWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         (void)_t;
         switch (_id) {
         case 0: _t->on_pushButtonAddUser_clicked(); break;
-        case 1: _t->on_pushButtonAddUser_2_clicked(); break;
+        case 1: _t->on_pushButtonpushButtonApplyChangesProducts_clicked(); break;
         case 2: _t->on_pushButtonAddProduct_clicked(); break;
-        case 3: _t->on_pushButtonAddProduct_2_clicked(); break;
+        case 3: _t->on_pushButtonApplyChanges_clicked(); break;
         default: ;
         }
     }

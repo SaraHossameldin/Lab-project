@@ -13,15 +13,19 @@ QVector<UserInfo> DataBase::getUserInfo()
     auto temp = QSqlDatabase::addDatabase("QSQLITE", "dbconn1");
     temp.setDatabaseName(this->path);
     temp.open();
+    //SQL query to retrieve all records from the Users table in the database file
     QSqlQuery query(temp);
     query.exec("select * from Users");
+    //vector of type UserInfo
     QVector<UserInfo> userlist;
     while(query.next())
     {
+        //store the data from the query in variables
         int id= query.value(0).toInt();
         QString username = query.value(1).toString();
         QString password = query.value(2).toString();
         int isAdmin = query.value(3).toInt();
+        //adds a new element intilized by the data stored from the table
         userlist.append(UserInfo(id,username, password, isAdmin));
     }
     // Close database
@@ -59,11 +63,13 @@ QVector<Product> DataBase::getProducts()
     auto temp = QSqlDatabase::addDatabase("QSQLITE", "dbconn1");
     temp.setDatabaseName(this->path);
     temp.open();
+    //SQL query to retrieve all records from the Users table in the database file
     QSqlQuery query(temp);
     query.exec("select Id, Name, UnitPrice, Category, IsNew, DiscountRate, brand from Products");
     QVector<Product> productlist;
     while(query.next())
     {
+         //store the data from the query in variables
         int id= query.value(0).toInt();
         QString Name = query.value(1).toString();
         double UnitPrice = query.value(2).toDouble();
@@ -71,75 +77,41 @@ QVector<Product> DataBase::getProducts()
         auto IsNew = query.value(4).toInt();
         auto DiscountRate = query.value(5).toDouble();
         QString brand= query.value(6).toString();
+        //adds a new element intilized by the data stored from the table
         productlist.append(Product(id,Name,UnitPrice, category, IsNew, DiscountRate, brand));
     }
      temp.close();
     return productlist;
 }
 
-QVector<Order> DataBase::getOrders(const QString& username)
-{
-    //open database
-    auto temp = QSqlDatabase::addDatabase("QSQLITE", "dbconn1");
-    temp.setDatabaseName(this->path);
-    temp.open();
-    QSqlQuery query(temp);
-    query.exec("select Orders.OrderId, Name, UnitPrice, Quantity, OrderDetails.TotalAmount, OrderDate, Username from Orders inner join OrderDetails on Orders.OrderId = OrderDetails.OrderId inner join Products on Products.Id = OrderDetails.ProductId where Username like '"+username+"' ");
-    QVector<Order> orders;
-    while(query.next())
-    {
-        auto orderId = query.value(0).toInt();
-        auto productName = query.value(1).toString();
-        auto UnitPrice = query.value(2).toDouble();
-        auto Quantity = query.value(3).toDouble();
-        auto TotalAmount = query.value(4).toDouble();
-        auto date1 = query.value(5).toDateTime();
-        auto user1 = query.value(6).toString();
-
-        //find the order in orders list if found
-        auto iter = orders.begin();
-        while(iter != orders.end()){
-            if ((*iter).orderId == orderId)
-            {
-                //just add the orderdetails
-                (*iter).lines.append(OrderLine(productName,Quantity, TotalAmount));
-                break;
-            }
-            iter++;
-        }
-        if (iter == orders.end()) {
-            auto newOrder = Order(QVector<OrderLine>(), date1, user1, 0 );
-            orders.append(newOrder);
-            newOrder.lines.append(OrderLine(productName,Quantity, TotalAmount));
-        }
-    }
-    temp.close();
-    return orders;
-}
-
-QVector<Order> DataBase::getAllOrders()
-{
-    return getOrders("%");
-}
-
 bool DataBase::addNewUser(UserInfo& newUser)
 {
+    //open database file
     auto temp = QSqlDatabase::addDatabase("QSQLITE", "dbconn1");
     temp.setDatabaseName(this->path);
     temp.open();
     QSqlQuery query(temp);
+
+    //to insert a new user into the Users table in the database with the
+    //username, password, and isAdmin
+    //and stores the success or failure in the returnValue variable.
     bool returnValue = query.exec("insert into Users(Username, Password, IsAdmin) values('"+
                                   newUser.username+"', '"+newUser.password+"', "+ QString::number(newUser.isAdmin)+")");
     temp.close();
+    //return if the operation is successful
     return returnValue;
 }
 
 bool DataBase::updateUser(int id, QString& name, QString& password, int isAdmin)
 {
+    //open database file
     auto temp = QSqlDatabase::addDatabase("QSQLITE", "dbconn1");
     temp.setDatabaseName(this->path);
     temp.open();
     QSqlQuery query(temp);
+    //to update a user of a specfic id in the Users table in the database with the
+    //username, password, and isAdmin
+    //and stores the success or failure in the returnValue variable.
     bool returnValue = query.exec("update Users set Username='"+name+"', Password='"+password+
                                   "', IsAdmin="+QString::number(isAdmin)+" where Id = "+QString::number(id));
     temp.close();
@@ -152,6 +124,8 @@ bool DataBase::deleteUser(int id)
     temp.setDatabaseName(this->path);
     temp.open();
     QSqlQuery query(temp);
+    //to delete a user of a specfic id from the Users table in the database
+    //and stores the success or failure in the returnValue variable.
     bool returnValue = query.exec("delete from Users where Id = "+QString::number(id));
     temp.close();
     return returnValue;
@@ -163,6 +137,8 @@ bool DataBase::addProduct(QString& name, QString& category, double unitPrice,int
     temp.setDatabaseName(this->path);
     temp.open();
     QSqlQuery query(temp);
+    //to insert a new product into the Products table in the database
+    //and stores the success or failure in the returnValue variable.
     bool returnValue = query.exec("insert into Products(Name, UnitPrice, Category, IsNew, DiscountRate, brand) values('"+
                                   name+"', "+QString::number(unitPrice)+", '"+ category+"', "+QString::number(isNew)+","+
                                   QString::number(discount)+", '"+brand+"')");
@@ -179,6 +155,8 @@ bool DataBase::updateProduct(int id, const QString& name, const QString& categor
     QSqlQuery query(temp);
 
     // Construct the SQL query for updating the product
+    //to update a product of any id in the Products table in the database
+    //'%' retrieves all
     QString queryStr = QString("UPDATE Products SET "
                                "Name = '%1', "
                                "UnitPrice = %2, "
@@ -207,6 +185,8 @@ bool DataBase::deleteProduct(int id)
     temp.setDatabaseName(this->path);
     temp.open();
     QSqlQuery query(temp);
+    //to delete a product of a specfic id from the Products table in the database
+    //and stores the success or failure in the returnValue variable.
     bool returnValue = query.exec("delete from Products where Id = "+QString::number(id));
     temp.close();
     return returnValue;

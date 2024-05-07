@@ -36,14 +36,14 @@ namespace {
 struct qt_meta_stringdata_CLASSUserWindowENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSUserWindowENDCLASS = QtMocHelpers::stringData(
     "UserWindow",
-    "on_pushButton_clicked",
+    "on_pushButtonApplyFilter_clicked",
     "",
     "addToCartClicked",
     "row",
     "productId",
-    "on_pushButton_2_clicked",
-    "on_pushButton_3_clicked",
-    "on_pushButton_4_clicked"
+    "on_pushButtonAddtoCart_clicked",
+    "on_pushButtonConfirm_clicked",
+    "on_pushButtonUpdate_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -89,17 +89,17 @@ Q_CONSTINIT const QMetaObject UserWindow::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSUserWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<UserWindow, std::true_type>,
-        // method 'on_pushButton_clicked'
+        // method 'on_pushButtonApplyFilter_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'addToCartClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
-        // method 'on_pushButton_2_clicked'
+        // method 'on_pushButtonAddtoCart_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_3_clicked'
+        // method 'on_pushButtonConfirm_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_4_clicked'
+        // method 'on_pushButtonUpdate_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -111,11 +111,11 @@ void UserWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<UserWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
+        case 0: _t->on_pushButtonApplyFilter_clicked(); break;
         case 1: _t->addToCartClicked((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 2: _t->on_pushButton_2_clicked(); break;
-        case 3: _t->on_pushButton_3_clicked(); break;
-        case 4: _t->on_pushButton_4_clicked(); break;
+        case 2: _t->on_pushButtonAddtoCart_clicked(); break;
+        case 3: _t->on_pushButtonConfirm_clicked(); break;
+        case 4: _t->on_pushButtonUpdate_clicked(); break;
         default: ;
         }
     }

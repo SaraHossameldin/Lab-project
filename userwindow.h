@@ -33,14 +33,14 @@ public:
     QString username;
 
 private slots:
-    void on_pushButton_clicked();
+    void on_pushButtonApplyFilter_clicked();
     void addToCartClicked(int row, int productId);
 
-    void on_pushButton_2_clicked();
+    void on_pushButtonAddtoCart_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_pushButtonConfirm_clicked();
 
-    void on_pushButton_4_clicked();
+    void on_pushButtonUpdate_clicked();
 
 private:
     Ui::UserWindow *ui;

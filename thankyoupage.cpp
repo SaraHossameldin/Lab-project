@@ -17,11 +17,14 @@ ThankYouPage::~ThankYouPage()
 
 
 
-
+//event handler for when the button labeled "New Customer" is clicked
 void ThankYouPage::on_pushButtonNewCustomer_clicked()
 {
+    //hide current window
     hide();
+    //Create a new instance of the Login class
     Login* login= new Login;
+    //show the new login window
     login->show();
 }
 

@@ -11,40 +11,31 @@ CONFIG += c++17
 SOURCES += \
     adminwindow.cpp \
     ckeckout.cpp \
-    creditcardinformation.cpp \
     database.cpp \
-    findproduct.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
     register.cpp \
-    shoppingcart.cpp \
     thankyoupage.cpp \
     userwindow.cpp
 
 HEADERS += \
     adminwindow.h \
     ckeckout.h \
-    creditcardinformation.h \
     database.h \
-    findproduct.h \
     login.h \
     mainwindow.h \
     register.h \
-    shoppingcart.h \
     thankyoupage.h \
     userwindow.h
 
 FORMS += \
     adminwindow.ui \
     ckeckout.ui \
-    creditcardinformation.ui \
     database.ui \
-    findproduct.ui \
     login.ui \
     mainwindow.ui \
     register.ui \
-    shoppingcart.ui \
     thankyoupage.ui \
     userwindow.ui
 

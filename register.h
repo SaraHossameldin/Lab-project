@@ -22,7 +22,7 @@ private slots:
 
 private:
     Ui::Register *ui;
-    DataBase* database; // Declare the database object
+    DataBase* database;
 };
 
 #endif // REGISTER_H

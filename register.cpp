@@ -16,11 +16,6 @@ Register::Register(QWidget *parent)
     ui->label_AlreadyExisting->setVisible(false);
     ui->label_NotMatching->setVisible(false);
     ui->label_FilledError->setVisible(false);
-
-    // Initialize the database
-    //auto temp = QSqlDatabase::addDatabase("QSQLITE", "dbconn1");
-   // temp.setDatabaseName(this->path);
-    //temp.open();
     }
 
 Register::~Register()
@@ -31,9 +26,11 @@ Register::~Register()
 
 void Register::on_pushButton_OK_clicked()
 {
-    // Check for errors
+    //store the text written by the user in a QString called username
     QString username = ui->Username_lineedit->text();
+    //store the text written by the user in a QString called password
     QString password = ui->PasswordLineedit->text();
+    //store the text written by the user in a QString called retypeusername
     QString retypepassword = ui->RetypePasswordlineedit->text();
 
     // Reset error labels
@@ -58,31 +55,28 @@ void Register::on_pushButton_OK_clicked()
 
     // Get user information from database
     DataBase db;
+    //vector of type UserInfo called userInfoList initilaized to be like the vector
+    //returned from the getUserInfo() function
     QVector<UserInfo> userInfoList = db.getUserInfo();
 
     // Check if username already exists
-    int lastUserId = 0;
+    int lastUserId = 0; //to get the id of the last user
+    //loop to check if the username is already in the vector
     for (const UserInfo& userInfo : userInfoList)
     {
         if (userInfo.username == username)
         {
+            //if it is found show the error label
             ui->label_AlreadyExisting->setVisible(true);
             return;
         }
+        //new value of the last id
         lastUserId = userInfo.id;
     }
-
-    //DataBase db;
+    //create a new user with 1+ the id of the last user and the username and password
+    //the user eneterd in the lineedits
     UserInfo newUser = UserInfo(lastUserId+1, username, password, 0);
     db.addNewUser(newUser);
-
-
-    // Add new user information to the database
-  //  UserInfo newUser;
-   // newUser.username = username;
-   // newUser.password = password;
-   // userInfoList.push_back(newUser);
-    //database->updateUserInfo(userInfoList);
 
     // Hide the current window and show the login window
     hide();
@@ -92,6 +86,7 @@ void Register::on_pushButton_OK_clicked()
 
 void Register::on_pushButton_Cancel_clicked()
 {
+    // Hide the current window and show the login window to try and login again
     hide();
     Login *login= new Login;
     login->show();

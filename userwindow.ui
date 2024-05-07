@@ -29,7 +29,7 @@
     <attribute name="title">
      <string>Products</string>
     </attribute>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineEditName">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -52,7 +52,7 @@
       <string>Product Name</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="lineEditcategory">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -75,7 +75,7 @@
       <string>Category</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="pushButtonApplyFilter">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -98,7 +98,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="pushButtonAddtoCart">
      <property name="geometry">
       <rect>
        <x>400</x>
@@ -162,7 +162,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="pushButtonConfirm">
      <property name="geometry">
       <rect>
        <x>400</x>
@@ -175,7 +175,7 @@
       <string>Confirm</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="pushButtonUpdate">
      <property name="geometry">
       <rect>
        <x>310</x>

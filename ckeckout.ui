@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>160</width>
-    <height>234</height>
+    <width>373</width>
+    <height>263</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="pushButton_CreditCard">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
+     <x>140</x>
+     <y>70</y>
      <width>80</width>
      <height>18</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="pushButton_COD">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>100</y>
+     <x>140</x>
+     <y>110</y>
      <width>80</width>
      <height>18</height>
     </rect>
@@ -42,8 +42,8 @@
   <widget class="QPushButton" name="pushButton_Back_to_Shopping_Cart">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>160</y>
+     <x>40</x>
+     <y>170</y>
      <width>101</width>
      <height>18</height>
     </rect>
@@ -55,14 +55,14 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
+     <x>150</x>
+     <y>40</y>
      <width>91</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Payment Method</string>
+    <string>Payment Method:</string>
    </property>
   </widget>
  </widget>

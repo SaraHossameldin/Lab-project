@@ -28,7 +28,6 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QPushButton *pushButton_OK;
-    QPushButton *pushButton_Cancel;
     QLabel *label_AlreadyExisting;
     QLabel *label_NotMatching;
     QLabel *label_FilledError;
@@ -60,10 +59,7 @@ public:
         label_3->setGeometry(QRect(50, 180, 91, 20));
         pushButton_OK = new QPushButton(Register);
         pushButton_OK->setObjectName("pushButton_OK");
-        pushButton_OK->setGeometry(QRect(20, 280, 80, 18));
-        pushButton_Cancel = new QPushButton(Register);
-        pushButton_Cancel->setObjectName("pushButton_Cancel");
-        pushButton_Cancel->setGeometry(QRect(160, 280, 80, 18));
+        pushButton_OK->setGeometry(QRect(120, 280, 80, 18));
         label_AlreadyExisting = new QLabel(Register);
         label_AlreadyExisting->setObjectName("label_AlreadyExisting");
         label_AlreadyExisting->setGeometry(QRect(210, 50, 111, 16));
@@ -86,7 +82,6 @@ public:
         label_2->setText(QCoreApplication::translate("Register", "Password:", nullptr));
         label_3->setText(QCoreApplication::translate("Register", "Retype Password:", nullptr));
         pushButton_OK->setText(QCoreApplication::translate("Register", "OK", nullptr));
-        pushButton_Cancel->setText(QCoreApplication::translate("Register", "Cancel", nullptr));
         label_AlreadyExisting->setText(QCoreApplication::translate("Register", "*Already Existing", nullptr));
         label_NotMatching->setText(QCoreApplication::translate("Register", "* Not Matching", nullptr));
         label_FilledError->setText(QCoreApplication::translate("Register", "*All Fields Must be Filled", nullptr));

@@ -19,12 +19,9 @@ public:
 
 private slots:
     void on_pushButtonAddUser_clicked();
-
-    void on_pushButtonAddUser_2_clicked();
-
+    void on_pushButtonpushButtonApplyChangesProducts_clicked();
     void on_pushButtonAddProduct_clicked();
-
-    void on_pushButtonAddProduct_2_clicked();
+    void on_pushButtonApplyChanges_clicked();
 
 private:
     Ui::AdminWindow *ui;

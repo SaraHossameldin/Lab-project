@@ -16,14 +16,14 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>421</width>
-     <height>281</height>
+     <x>0</x>
+     <y>0</y>
+     <width>441</width>
+     <height>311</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -52,7 +52,7 @@
       <string>Add User</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButtonAddUser_2">
+    <widget class="QPushButton" name="pushButtonApplyChanges">
      <property name="geometry">
       <rect>
        <x>100</x>
@@ -93,7 +93,7 @@
       <string>Add Product</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButtonAddProduct_2">
+    <widget class="QPushButton" name="pushButtonApplyChangesProducts">
      <property name="geometry">
       <rect>
        <x>100</x>
